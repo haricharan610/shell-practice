@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-person1=Dr.morgon
-person2=ethan 
+person1=$1
+person2=$2  
 
 echo "$person1: you known this place"
 echo "$person2: what's that boss"
