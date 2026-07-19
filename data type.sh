@@ -1,9 +1,8 @@
 #!/bin/bash
 
-number1=555
-number2=555
+number1=45622
+number2=24566
 
 sum=$(($number1 + $number2))
 
-echo "sum of $number1 and $number2 is : $sum"
-
+echo "sum of $number1 and number2 is : $sum"
