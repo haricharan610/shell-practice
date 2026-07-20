@@ -9,7 +9,7 @@ then
 echo "ERROR :: please run with root access"
 exit1
 
-then
+else
 
 echo "you running with root access"
 
