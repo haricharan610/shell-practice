@@ -12,22 +12,22 @@ echo "you are runninh with root access"
 
 fi
 
-dnf list installed mongodb
+dnf list installed nginx
 
 #check if installed or not. if installed $? is 0, then
 #if not installed $? is not 0. expression is true
 
 if [ $? -ne 0 ]
 then
-echo " mongodb not installed... going to install it"
-dnf install mongodb-org -y 
+echo " nginx not installed... going to install it"
+dnf install nginx -y 
 if [ $? -eq 0]
 then
-echo " installing mongodb... success"
+echo " installing nginx... success"
 else
-echo "installing mongodb... fail"
+echo "installing nginx... fail"
 fi
 
-echo " mongodb already installed... nothing to do"
+echo " nginx already installed... nothing to do"
 
 fi
