@@ -10,7 +10,7 @@ echo "ERROR :: please run with root user"
 else
 
 echo " running with root user"
-exit 1
+
 fi
 
 dnf list installed tree 
@@ -23,16 +23,16 @@ then
 echo "tree is not installed... going to install"
 dnf install tree -y
 
+if [ $? -eq 0 ]
+then
+    echo "Tree installing... SUCCESS"
+else
+    echo "Tree installing... FAILED"
+    exit 1
+fi
 if [ $? -ne 0 ]
 then
-
-echo "tree installing... succes"
+    ...
 else
-
-echo "tree installing... fail"
-exit 1
-
+    echo "Tree is already installed... Nothing to do"
 fi
-
-echo "tree already installed... nothing to do"
-fi 
