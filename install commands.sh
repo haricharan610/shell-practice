@@ -21,8 +21,8 @@ then
 
 echo " MYSQl is not installed... going to install it"
 dnf install mysql -y
-if [ $? eq -0 ]
-else
+if [ $? -eq 0 ]
+then
 echo " installing mysql.. success"
 else
 echo " mysql installing... fail"
