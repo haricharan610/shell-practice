@@ -2,7 +2,7 @@
 
 userid=$(id -u)
 
-if [ userid -ne 0 ]
+if [ $userid -ne 0 ]
 
 then
 
@@ -16,7 +16,7 @@ echo "you are running with root user"
 
 fi
 
-dnf list insatlled nginx 
+dnf list installed nginx 
 
 #check if any installed or not 
 #if installed $? is 0
@@ -44,6 +44,6 @@ exit 1
 
 fi
 
-echo " if nginx already installed... nothing to do"
+echo "nginx already installed... nothing to do"
 
 fi
