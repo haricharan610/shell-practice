@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $userid -ne 0]
+if [ $USERID -ne 0 ]
 then
 echo "ERROR :: please run with this root access"
 
@@ -17,11 +17,11 @@ dnf list installed mongodb
 #check if installed or not. if installed $? is 0, then
 #if not installed $? is not 0. expression is true
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
-echo " mongodb not installed... going to install it'
+echo " mongodb not installed... going to install it"
 dnf install mongodb-org -y 
-if [ $? -eq o]
+if [ $? -eq 0]
 then
 echo " installing mongodb... success"
 else
