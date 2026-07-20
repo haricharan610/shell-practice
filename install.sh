@@ -6,6 +6,7 @@ if [ $userid -ne 0 ]
 then
 
 echo "ERROR :: please run with root user"
+exit 1
 
 else
 
@@ -32,9 +33,7 @@ else
 fi
 
 if [ $? -ne 0 ]
-then
-    ...
+
 else
     echo "Tree is already installed... Nothing to do"
 fi
-
