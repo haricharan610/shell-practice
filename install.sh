@@ -32,8 +32,6 @@ else
     exit 1
 fi
 
-if [ $? -ne 0 ]
-
 else
     echo "Tree is already installed... Nothing to do"
 fi
