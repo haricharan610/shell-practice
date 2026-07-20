@@ -13,26 +13,26 @@ echo " running with root user"
 exit 1
 fi
 
-dnf list installed catalouge 
+dnf list installed tree 
 
 #check if already installed or not. if installed $? 0,
 #if not installed $? is not 0.
 
 if [ $? -ne 0 ]
 then
-echo "catalouge is not installed... going to install"
-dnf install cataluge -y
+echo "tree is not installed... going to install"
+dnf install tree -y
 
 if [ $? -ne 0 ]
 then
 
-echo "catalouge installing... succes"
+echo "tree installing... succes"
 else
 
-echo "catalouge installing... fail"
+echo "tree installing... fail"
 exit 1
 
 fi
 
-echo "catalouge already installed... nothing to do"
+echo "tree already installed... nothing to do"
 fi 
