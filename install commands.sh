@@ -1,35 +1,33 @@
 #!/bin/bash
 
-userid=$(id -u)
+USERID=$(id -u)
 
-if [ $userid -ne 0 ]
-  then
-echo "ERROR :: please run eith this acces with root"
-  exit 1 #give other than 0 upto 127
-
-  else
- echo "you are running with root access"
-
-fi
-
-dnf list installed mysql
-# check already installed or not. if installed $? is 0, then 
-# if not installed $? is not 0 expression is true 
-
-if [ $? -ne 0 ]
-then 
-
-echo " MYSQl is not installed... going to install it"
-dnf install mysql -y
-if [ $? -eq 0 ]
+if [ $userid -ne 0]
 then
-echo " installing mysql.. success"
+echo "ERROR :: please run with this root access"
+
 else
-echo " mysql installing... fail"
+
+echo "you are runninh with root access"
+
 fi
 
-else 
+dnf list installed mongodb
 
-echo "if mysql installed... nothing to do "
+#check if installed or not. if installed $? is 0, then
+#if not installed $? is not 0. expression is true
+
+if [ $? -ne 0]
+then
+echo " mongodb not installed... going to install it'
+dnf install mongodb-org -y 
+if [ $? -eq o]
+then
+echo " installing mongodb... success"
+else
+echo "installing mongodb... fail"
+fi
+
+echo " mongodb already installed... nothing to do"
 
 fi
