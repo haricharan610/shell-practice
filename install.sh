@@ -30,9 +30,11 @@ else
     echo "Tree installing... FAILED"
     exit 1
 fi
+
 if [ $? -ne 0 ]
 then
     ...
 else
     echo "Tree is already installed... Nothing to do"
 fi
+
