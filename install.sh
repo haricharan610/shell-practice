@@ -1,9 +1,10 @@
 #!/bin/bash
 
-userid=$( userid -ne 0)
+userid=$( userid -ne 0 )
 
-if[ $userid -ne 0 ]
+if [ $userid -ne 0 ]
 then
+exit 1
 
 echo "ERROR :: please run with root user"
 
