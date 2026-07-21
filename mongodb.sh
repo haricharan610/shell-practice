@@ -18,9 +18,9 @@ if [ $? -ne 0 ]
 then 
 
 echo "mongodb not installed going to install it"
-dnf install mongodb-org -y 
+dnf install mongodb-org 
 
-if [ $? -ne 0 ]
+if [ $? -eq 0 ]
 then
 echo "mongodb install success"
 else
@@ -30,10 +30,10 @@ fi
 else 
 echo "mongodb already install nothing to do"
 fi
-systemctl enable mongodb
-systemctl start mongodb
+systemctl enable mongod
+systemctl start mongod
 
-sed -i 's/127/0.0.1/0.0.0.0/' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 
 systemctl restart mongod
 
