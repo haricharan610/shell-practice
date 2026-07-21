@@ -1,6 +1,6 @@
 #!/bin/bash
 
-userid=(id -u)
+userid=$(id -u)
 
 if [ $userid -ne 0 ]
 then
@@ -40,7 +40,7 @@ echo "mysql already installed nothing to do"
 
 fi
 
-dnf install python3
+dnf list installed python3
 
 if [ $? -ne 0 ]
 then
@@ -54,7 +54,7 @@ else
 echo "ptyhon3 already installed nothing to do"
 fi
 
-dnf install nginx 
+dnf list installed nginx 
 
 if [ $? -ne 0 ]
 then
