@@ -18,13 +18,14 @@ if [ $? -ne 0 ]
 then 
 
 echo "mongodb not installed going to install it"
-dnf install mongodb-org 
+dnf install mongodb-org -y
 
 if [ $? -eq 0 ]
 then
 echo "mongodb install success"
 else
 echo "mongodb install fail"
+exit 1 
 fi
 
 else 
