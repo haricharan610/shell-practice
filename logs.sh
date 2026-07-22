@@ -6,11 +6,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="var/log/shellscript-logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
-mkdir -p $  LOGS_FOLDER
+mkdir -p $ LOGS_FOLDER
 echo "script started excueting at: $(date)" | tee -a $LOG_FILE
 
 if [ $userid -ne 0 ]
@@ -18,7 +18,7 @@ then
 echo -e "$R ERROR :: please run with root access $N" | tee -a $LOG_FILE 
 exit 1 
 else
-echo "you are running with root access"
+echo "you are running with root access" | tee -a $LOG_FILE
 fi
 
 validate(){
@@ -35,7 +35,7 @@ dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
 echo "mysql not installed going to install it" | tee -a $LOG_FILE
-dnf install mysql -y 
+dnf install mysql -y &>>$LOG_FILE
 validate $? "mysql"
 else
 echo -e "$G mysql already installed nothing to do $N" | tee -a $LOG_FILE
@@ -45,9 +45,9 @@ dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
 echo "nginx not installed going to install it" | tee -a $LOG_FILE
-dnf install nginx -y 
+dnf install nginx -y &>>$LOG_FILE
 validate $? "nginx"
 
 else
-echo "nginx already installed nothing to do" | tree -a $LOG_FILE
+echo "nginx already installed nothing to do" | tee -a $LOG_FILE
 fi
