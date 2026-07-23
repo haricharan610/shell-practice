@@ -34,12 +34,12 @@ fi
 }
 
 for package in ${package[@]}
-#for packages in $@
+#for package in $@
 do
 dnf list installed $packages &>>$log_file
 if [ $? -ne 0 ]
 then
- echo "$packages not installed going to install" | tee -a $log_file
+ echo "$package not installed going to install" | tee -a $log_file
  dnf install $package -y &>>$log_file
  validate $? "$package"
  else
