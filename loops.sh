@@ -36,7 +36,7 @@ fi
 for package in ${packages[@]}
 #for package in $@
 do
-pacman list installed $package &>>$log_file
+dnf list installed $package &>>$log_file
 if [ $? -ne 0 ]
 then
  echo "$package not installed going to install" | tee -a $log_file
