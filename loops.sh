@@ -43,6 +43,6 @@ then
  dnf install $package -y &>>$log_file
  validate $? "$package"
  else
- echo "$package already installed nothing do" | tee -a $log_file
+echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
  fi
  done
