@@ -33,7 +33,7 @@ exit 1
 fi
 }
 
-for package in ${package[@]}
+for package in ${packages[@]}
 #for package in $@
 do
 dnf list installed $package &>>$log_file
